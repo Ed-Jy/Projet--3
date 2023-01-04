@@ -59,7 +59,7 @@ if(!empty($_POST)){
             </div>
         
     </header>
-        <h1>Inscription</h1>
+        <h1>Inscriptionhgfhfhf</h1>
         <form method="post">
             <div>
                 <label for="pseudo">Pseudo:</label>
