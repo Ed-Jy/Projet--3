@@ -59,7 +59,7 @@ if(!empty($_POST)){
             </div>
         
     </header>
-        <h1>Inscription je suis le test</h1>
+        <h1>Inscription en faite j'en veux pas</h1>
         <form method="post">
             <div>
                 <label for="pseudo">Pseudo:</label>
