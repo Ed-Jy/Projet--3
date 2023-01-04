@@ -1,0 +1,88 @@
+/* Body */
+.container{
+    margin: auto;
+    width: 574px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px blue solid;
+    background-color: #F3F5F3;
+}
+
+
+/* Haut du site */
+header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border: 1px black solid;
+    padding-right: 5px ;
+    padding-left: 5px;
+}
+.logo_header{
+    width: 200px;
+}
+.login_section{
+    display: flex;
+    align-items: center;
+}
+.logo_login{
+    width: 20px;
+    padding-right: 5px;
+}
+
+
+
+/* Partie section et commentaire */
+section{
+    border: 1px black solid;
+    height: 300px;
+    text-align: center;
+}
+
+/* Partie formulaire inscription/connection */
+form{
+    border: 1px black solid;
+    height: 300px;
+    text-align: center;        
+}
+
+/* Pied de page */
+footer{
+    border: 1px black solid;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1000px){
+.container{
+    margin: auto;
+    width: 1000px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px blue solid;
+    background-color:#F3F5F3; 
+}
+}
+
+
+
