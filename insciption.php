@@ -17,7 +17,7 @@ if(!empty($_POST)){
 
         // Engistrement dans la bdd
         $db = new PDO('mysql:host=localhost;dbname=oc_gbaf;charset=utf8', 'root', 'root'); 
-        $sql = "INSERT INTO account(username) VALUE (?,?)";  
+        $sql = "INSERT INTO `account`(`nom`,`prenom`,`username`,`password`,`reponse`) VALUE (?,?) ";  
         
         $query = $db->prepare($sql);
         
