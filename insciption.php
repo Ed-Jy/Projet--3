@@ -1,8 +1,11 @@
 <?php
+    // Includes function.php
+    include_once("includes/functions.php");
+
     // Includes "header"
     include("includes/header.php");
 ?>
-<article>   
+<article>  
     <form method="post">
         <h1>Inscription</h1>
             <div>
