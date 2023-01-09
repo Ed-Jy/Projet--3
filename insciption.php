@@ -1,7 +1,4 @@
 <?php
-    // Includes "head"
-    include("includes/head.php");
-    
     // Includes "header"
     include("includes/header.php");
 ?>
