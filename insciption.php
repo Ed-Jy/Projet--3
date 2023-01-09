@@ -1,4 +1,8 @@
 <?php
+    $titrepage = "Page d'inscription";
+    //Inculdes connecionbdd.php
+    require_once("includes/connect.php");
+
     // Includes function.php
     include_once("includes/functions.php");
 
