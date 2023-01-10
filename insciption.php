@@ -11,13 +11,13 @@
             //on récupère les données en les protégeant
             $pseudo = strip_tags($_POST["nickname"]);
             //Je vais hacher le mdp
-            $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-
+            //$pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+            $pass = $_POST["pass"];
             //On enregistre en bdd
             require_once("includes/connect.php");
-
+           
             //J'écris ma requête
-            $sql = "INSERT INTO `account`(`nom`,`prenom`,`username`,`pass`,`reponse`) VALUES (:nom,:prenom ,:pseudo, :pass, :reponse)";
+            $sql = "INSERT INO `account`(`nom`,`prenom`,`username`,`pass`,`reponse`) VALUES (:nom,:prenom ,:pseudo, :pass, :reponse)";
 
             //On prépare la requête
             $query = $db -> prepare($sql);
@@ -29,10 +29,11 @@
             $query->bindValue(":pass", $pass, PDO::PARAM_STR);
             $query->bindValue(":reponse",'reponse', PDO::PARAM_STR);
 
+             
             //On execute la requête
-            //if(!$query->execute()){
-              //  die("Une erreur est survenue");
-            //}
+            if(!$query->execute()){
+                die("Une erreur est survenue");
+            }
             //On récupère l'id de l'article
             //$id = $db->lastInsertId();
 
