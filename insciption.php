@@ -17,7 +17,7 @@
             require_once("includes/connect.php");
            
             //J'écris ma requête
-            $sql = "INSERT INO `account`(`nom`,`prenom`,`username`,`pass`,`reponse`) VALUES (:nom,:prenom ,:pseudo, :pass, :reponse)";
+            $sql = "INSERT INTO `account`(`nom`,`prenom`,`username`,`pass`,`reponse`) VALUES (:nom,:prenom ,:pseudo, :pass, :reponse)";
 
             //On prépare la requête
             $query = $db -> prepare($sql);
@@ -35,10 +35,10 @@
                 die("Une erreur est survenue");
             }
             //On récupère l'id de l'article
-            //$id = $db->lastInsertId();
+            $id = $db->lastInsertId();
 
-            //die("Votre compte à bien été crée sous l'id $id");
-  
+            die("Votre compte à bien été crée sous l'id numéro $id");
+             
         }else{
             die("Le formulaire est incomplet");
         }
