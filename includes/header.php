@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylepage.css">
+    <link rel="stylesheet" href="style.css">
     <title><?= $titrepage ?? "Accueil" ?></title>
 </head>
 <body class="container">
-<header>
+<nav>
         <div>
             <!-- <img class="logo_header" src="/ressources/logo.png" alt=""> -->
             <img class="logo_header" src="ressources/logo.png" alt="">
         </div>
         <div class="login_section" >
-            <a href="test.php" target="_blank">
-                <img class="logo_login" src="ressources/login.png" alt="">
-            </a>    
+          <ul>
+            <?php if(!isset($_SESSION["user"])):?>
+                <li><a href="connexion.php">Connexion</a></li>
+                <li><a href="insciption.php">Inscription</a></li>
+            <?php else:?>
+                <li><a href="deconnexion.php">Deconnexion</a></li>
+            <?php endif; ?>
+            
+          
+                
+          </ul>  
         </div>
         
-    </header>
+</nav>

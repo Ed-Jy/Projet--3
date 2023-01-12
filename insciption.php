@@ -1,4 +1,6 @@
 <?php
+//on demarre la session php
+session_start();
 
     //on verifie si le formulaire à été envoyé
     if(!empty($_POST)){
@@ -10,9 +12,13 @@
             //le formulaire est complet
             //on récupère les données en les protégeant
             $pseudo = strip_tags($_POST["nickname"]);
+            $nom = strip_tags($_POST["nom"]);
+            $prenom = strip_tags($_POST["prenom"]);
+            $reponse = strip_tags($_POST["reponse"]);
+
             //Je vais hacher le mdp
-            //$pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-            $pass = $_POST["pass"];
+            $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+            //$pass = $_POST["pass"];
             //On enregistre en bdd
             require_once("includes/connect.php");
            
@@ -23,11 +29,11 @@
             $query = $db -> prepare($sql);
 
             //On inject les valeurs
-            $query->bindValue(":nom", 'nom',PDO::PARAM_STR);
-            $query->bindValue(":prenom",'prenom', PDO::PARAM_STR);
+            $query->bindValue(":nom", $nom,PDO::PARAM_STR);
+            $query->bindValue(":prenom",$prenom, PDO::PARAM_STR);
             $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
             $query->bindValue(":pass", $pass, PDO::PARAM_STR);
-            $query->bindValue(":reponse",'reponse', PDO::PARAM_STR);
+            $query->bindValue(":reponse",$reponse, PDO::PARAM_STR);
 
              
             //On execute la requête
@@ -37,13 +43,23 @@
             //On récupère l'id de l'article
             $id = $db->lastInsertId();
 
-            die("Votre compte à bien été crée sous l'id numéro $id");
+            // Je stock dans $_SESSION les inforamtions de l'utilisateur
+            $_SESSION["user"] = [
+                "id" => $user["id_user"],
+                "pseudo" => $user["username"],
+                "nom" => $user["nom"],
+                "prenom" => $user["prenom"]
+            ];
+            //Je peux rediriger vers une page de profile
+            header("Location: profil.php");
+
+            //Je n'arrive pas à récupérer imédiatement les informations comme avec connexion
              
         }else{
             die("Le formulaire est incomplet");
         }
     }
-    var_dump($_POST);
+    //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
 
     //Nom de la page
     $titrepage = "Page d'inscription";
