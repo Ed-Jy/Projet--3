@@ -41,12 +41,21 @@ section{
     height: 300px;
     text-align: center;
 }
+h1{
+    border: 1px black solid;
+    text-align: center; 
+}
 
 /* Partie formulaire inscription/connection */
 form{
     border: 1px black solid;
     height: 300px;
-    text-align: center;        
+    text-align: center;
+}
+label{
+    /*border: 1px black solid;*/
+    display: flex;
+    flex-direction: column;
 }
 
 /* Pied de page */
