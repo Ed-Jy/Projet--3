@@ -7,7 +7,7 @@ session_start();
 
     // Includes "header"
     include("includes/header.php");
-    var_dump($_SESSION)
+    //var_dump($_SESSION)
 ?>
 <article>  
 <h1>Profil de <?php echo $_SESSION["user"]["pseudo"]; ?></h1>

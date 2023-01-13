@@ -1,6 +1,11 @@
 <?php
 //on demarre la session php
 session_start();
+//permet de rediriger directement l'utilisateur quand il est sur profil quand il est dejà connecté
+if(isset($_SESSION["user"])){
+    header("Location: profil.php");
+    exit;
+}
 
     //on verifie si le formulaire à été envoyé
     if(!empty($_POST)){

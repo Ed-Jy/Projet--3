@@ -10,6 +10,9 @@
 
 
 /* Haut du site */
+.userCompte{
+    list-style-type: none;
+}
 nav{
     display: flex;
     align-items: flex-end;
