@@ -1,4 +1,5 @@
 <?php
+//on demarre la session php
 session_start();
 include_once "includes/header.php";
 ?>
