@@ -47,7 +47,16 @@ if(isset($_SESSION["user"])){
             }
             //On récupère l'id de l'article
             $id = $db->lastInsertId();
+            // Modifier pendant la session de mentorat
+            $sql = "SELECT * FROM `account` WHERE `username` = :pseudo";
 
+            $query = $db->prepare($sql);
+    
+            $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
+    
+            $query->execute();
+    
+            $user = $query->fetch();
             // Je stock dans $_SESSION les inforamtions de l'utilisateur
             $_SESSION["user"] = [
                 "id" => $user["id_user"],

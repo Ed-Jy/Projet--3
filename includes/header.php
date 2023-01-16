@@ -17,7 +17,7 @@
           <ul>
             <?php if(!isset($_SESSION["user"])):?>
                 <li><a href="connexion.php">Connexion</a></li>
-                <li><a href="insciption.php">Inscription</a></li>
+                <li><a href="inscription.php">Inscription</a></li>
             <?php else:?>
                 <li class="userCompte" ><?= $_SESSION["user"]["pseudo"] ?></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
