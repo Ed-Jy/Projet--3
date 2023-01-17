@@ -11,11 +11,11 @@ if(isset($_SESSION["user"])){
 if(!empty($_POST)){
         //Le formulaire à été envoyé
         //Je verif que tous les champs OBLI* sont remplis
-    if(isset($_POST["nickname"], $_POST["pass"])
-    && !empty($_POST["nickname"]) && !empty($_POST["pass"])
+    if(isset($_POST["nickname"], $_POST["reponse"])
+    && !empty($_POST["nickname"]) && !empty($_POST["reponse"])
         ){
         //on récupère les données en les protégeant
-        $pseudo = strip_tags($_POST["nickname"]);    
+        $pseudo = strip_tags($_POST["nickname"]);  
         //Je me connect à la base de donnée
         require_once "includes/connect.php";
 
@@ -30,11 +30,11 @@ if(!empty($_POST)){
         $user = $query->fetch();
 
         if(!$user){
-            die("L'utilisateur et/ou le mot de passe est incorrect.");
+            die("L'utilisateur et/ou la réponse secrète est incorrect.");
         }
         //Ici le user existe, on peut verifier son mdp
         if(!password_verify($_POST["pass"], $user["pass"])){
-            die("L'utilisateur et/ou le mot de passe est incorrect.");
+            die("L'utilisateur et/ou la réponse secrète est incorrect.");
         }
         //L'utilisateur et le mdp sont corrects.
         //On va pouvoir connecter l'utilisateur, ouvrir la session.
@@ -57,7 +57,7 @@ if(!empty($_POST)){
     //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
 
     //Nom de la page
-    $titrepage = "Connexion";
+    $titrepage = "Mot de passe oublié";
 
     // Includes "header"
     include("includes/header.php");
@@ -68,10 +68,10 @@ if(!empty($_POST)){
             <div>
                 <label for="pseudo">Pseudo:</label>
                 <input type="text" name="nickname" id="pseudo">
-            </div>            
+            </div>         
             <div>
-                <label for="pass">Mot de passe:</label>
-                <input type="password" name="pass" id="pass">
+                <label for="question">Quel est la marque de votre première voiture ?</label>
+                <input type="text" name="reponse" id="reponse">
             </div>
             </br>
             <button type="submit">Me connecter</button>

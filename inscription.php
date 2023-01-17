@@ -70,7 +70,7 @@ if(isset($_SESSION["user"])){
             //Je n'arrive pas à récupérer imédiatement les informations comme avec connexion
              
         }else{
-            die("Le formulaire est incomplet");
+            echo("<p>Le formulaire est incomplet*</p>");
         }
     }
     //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
@@ -102,7 +102,7 @@ if(isset($_SESSION["user"])){
             </div>
             </br>
             <div>
-                <label for="question">Quel est le nom de jeune fille de votre mère ?</label>
+                <label for="question">Quel est la marque de votre première voiture ?</label>
                 </br>
                 <input type="text" name="reponse" id="reponse">
             </div>

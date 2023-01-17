@@ -15,20 +15,6 @@ if(!isset($_SESSION["user"])){
     include("includes/header.php");
     //var_dump($_SESSION)
 ?>
-<section>
-    <h1>Groupement Banque Assurance Français</h1>    
-    <p>Texte présentation du GBAF et du site</p>
-</section>
-<section>
-    <h2>Titre section acteurs et partenairs</h2>
-    <p>Texte acterus et partenaires</p>
-    <div class="bloc_partner">
-        
-
-    </div>
-</section>
-
-
 <?php
     // Includes "footer"
     include("includes/footer.php");

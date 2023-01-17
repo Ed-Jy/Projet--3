@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <title><?= $titrepage ?? "Accueil" ?></title>
 </head>
 <body class="container">
 <nav>
         <div>
-            <!-- <img class="logo_header" src="/ressources/logo.png" alt=""> -->
-            <img class="logo_header" src="ressources/logo.png" alt="">
+            <a href="http://localhost/Projet%20%233/profil.php"><img class="logo_header" src="ressources/logo.png" alt=""></a>
         </div>
         <div class="login_section" >
           <ul>
             <?php if(!isset($_SESSION["user"])):?>
-                <li><a href="connexion.php">Connexion</a></li>
+                <li><a href="index.php">Connexion</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
             <?php else:?>
-                <li class="userCompte" ><?= $_SESSION["user"]["pseudo"] ?></li>
+                <li class="userCompte" ><?= $_SESSION["user"]["nom"]." ".$_SESSION["user"]["prenom"]?></li>
+                <li><a href="profilparam.php">Paramêtres du compte</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
-            <?php endif; ?>
-            
-          
-                
+            <?php endif; ?>   
           </ul>  
         </div>
         

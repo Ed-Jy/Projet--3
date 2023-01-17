@@ -71,8 +71,10 @@ footer{
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color:#F3F5F3; 
+    background-color:#F3F5F3;
 }
+
+
 }
 
 
