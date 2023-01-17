@@ -38,8 +38,11 @@ nav{
 /* Partie section et commentaire */
 section{
     border: 1px black solid;
-    height: 300px;
-    text-align: center;
+
+}
+article{
+    border: 1px black solid;
+
 }
 h1{
     border: 1px black solid;
