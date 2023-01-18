@@ -15,12 +15,12 @@
         <div class="login_section" >
           <ul>
             <?php if(!isset($_SESSION["user"])):?>
-                <li><a href="index.php">Connexion</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
+                <li class="userCompte"><a href="index.php">Connexion</a></li>
+                <li class="userCompte"><a href="inscription.php">Inscription</a></li>
             <?php else:?>
-                <li class="userCompte" ><?= $_SESSION["user"]["nom"]." ".$_SESSION["user"]["prenom"]?></li>
-                <li><a href="profilparam.php">Paramêtres du compte</a></li>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
+                <li class="userCompte" ><img class="logo_login" src="ressources/login.png"><?= $_SESSION["user"]["nom"]." ".$_SESSION["user"]["prenom"]?></li>
+                <li class="userCompte"><a href="profilparam.php">Paramêtres du compte</a></li>
+                <li class="userCompte"><a href="deconnexion.php">Deconnexion</a></li>
             <?php endif; ?>   
           </ul>  
         </div>

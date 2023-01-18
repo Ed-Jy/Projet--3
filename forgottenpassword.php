@@ -61,6 +61,9 @@ if(!empty($_POST)){
 
     // Includes "header"
     include("includes/header.php");
+
+    // Includes "sectionpresentation"
+    include_once("includes/sectionpresentation.php")
 ?>
 <article>  
 <h1>Connexion</h1>

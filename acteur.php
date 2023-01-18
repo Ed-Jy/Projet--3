@@ -29,8 +29,6 @@ $requete->execute();
 $acteur = $requete->fetch();
 
 
-var_dump($acteurs);
-
 //permet de rediriger directement l'utilisateur index.php quand il est déconnecté
 if(!isset($_SESSION["user"])){
     header("Location: index.php");
@@ -42,7 +40,10 @@ if(!isset($_SESSION["user"])){
 
     // Includes "header"
     include("includes/header.php");
-    //var_dump($_SESSION)
+
+    // Includes "sectionpresentation"
+    include_once("includes/sectionpresentation.php")
+
 ?>
 <h2><?php echo $acteur["acteur"]?></h2>
     <article class="bloc_partner">

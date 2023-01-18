@@ -5,28 +5,37 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #F3F5F3;    
+    background-color: beige;    
 }
 
 
 /* Haut du site */
 .userCompte{
     list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 nav{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    border: 1px black solid;
     padding-right: 5px ;
     padding-left: 5px;
+    border: 1px rgb(226, 18, 18) solid;
 }
 .logo_header{
-    width: 200px;
+    width: 150px;
+    padding: 10px;
 }
 .login_section{
+    border: 1px solid rgb(109, 0, 100);
     display: flex;
     align-items: center;
+    justify-content: center;
+
 }
 .logo_login{
     width: 20px;
@@ -34,19 +43,40 @@ nav{
 }
 
 
-
 /* Partie section et commentaire */
 section{
-    border: 1px black solid;
-
+    padding: 10px;
+    border: 1px solid blue;
 }
-article{
-    border: 1px black solid;
-
+.sectionActeur{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-h1{
-    border: 1px black solid;
-    text-align: center; 
+.bloc_partner{
+    border: 1px rgb(0, 85, 38) solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+.logo_png{
+    width: 400px;
+    height: 150px;
+    margin: 10px;
+    border: 1px rgb(0, 0, 0) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acteurDesc{
+    border: 1px rgb(134, 0, 0) solid;
+    width: 400px;
+}
+.readMore{
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 /* Partie formulaire inscription/connection */
@@ -66,6 +96,16 @@ footer{
     border: 1px black solid;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 1000px){
 .container{

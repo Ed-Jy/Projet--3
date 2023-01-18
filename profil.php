@@ -24,29 +24,27 @@ if(!isset($_SESSION["user"])){
     
 
     // Includes "header"
-    include("includes/header.php");
+    include_once("includes/header.php");
+    // Includes "sectionpresentation"
+    include_once("includes/sectionpresentation.php")
 ?>
 
 <section>
-    <h1>Groupement Banque Assurance Français</h1>    
-    <p>Texte présentation du GBAF et du site</p>
-</section>
-<section>
 <h2>Titre section acteurs et partenairs</h2>
     <p>Texte acterus et partenaires</p>
-<?php foreach($acteurs as $acteur): ?>    
-
-
-    <article class="bloc_partner">
-        <img/>
-        <h3><?php echo $acteur["acteur"]?></h3>
-        <p><?php echo $acteur["description"]?></p>
-        <a href="acteur.php?id=<?= $acteur["id_acteur"] ?>">Lire la suite</a>
-
-        
-
-    </article>
-<?php endforeach; ?>    
+    <section class="sectionActeur">
+        <?php foreach($acteurs as $acteur): ?>    
+            <article class="bloc_partner">
+                <div class="logo_png"><?php echo $acteur["logo"] ?></div>
+                <div class="acteurDesc">
+                    <h3><?php echo $acteur["acteur"]?></h3>
+                    <?php $acteurDesc = substr($acteur["description"],0 ,60); ?>
+                    <p><?php echo "$acteurDesc...  "?></p>
+                </div>
+                <a class="readMore" href="acteur.php?id=<?= $acteur["id_acteur"] ?>">Lire la suite</a>
+            </article>
+            <?php endforeach; ?> 
+    </section>
 </section>
 
 

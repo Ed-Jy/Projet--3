@@ -13,8 +13,13 @@ if(!isset($_SESSION["user"])){
 
     // Includes "header"
     include("includes/header.php");
-    //var_dump($_SESSION)
+    // Includes "sectionpresentation"
+    include_once("includes/sectionpresentation.php")
 ?>
+
+
+
+
 <?php
     // Includes "footer"
     include("includes/footer.php");
