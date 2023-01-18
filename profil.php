@@ -35,7 +35,7 @@ if(!isset($_SESSION["user"])){
     <section class="sectionActeur">
         <?php foreach($acteurs as $acteur): ?>    
             <article class="bloc_partner">
-                <div class="logo_png"><?php echo $acteur["logo"] ?></div>
+                <div class="logo_png"><?php //echo $acteur["logo"] ?></div>
                 <div class="acteurDesc">
                     <h3><?php echo $acteur["acteur"]?></h3>
                     <?php $acteurDesc = substr($acteur["description"],0 ,60); ?>
