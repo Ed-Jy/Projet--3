@@ -41,7 +41,11 @@ if(!isset($_SESSION["user"])){
                     <?php $acteurDesc = substr($acteur["description"],0 ,60); ?>
                     <p><?php echo "$acteurDesc...  "?></p>
                 </div>
-                <a class="readMore" href="acteur.php?id=<?= $acteur["id_acteur"] ?>">Lire la suite</a>
+                <button>
+                    <span>
+                        <a class="readMore" href="acteur.php?id=<?= $acteur["id_acteur"] ?>">Lire la suite</a>
+                    </span>
+                </button>
             </article>
             <?php endforeach; ?> 
     </section>

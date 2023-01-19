@@ -1,15 +1,32 @@
-/* Body */
+html{
+    background-color: beige;
+}
+                        /* Body */
 .container{
     margin: auto;
     width: 574px;
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: beige;    
+    background-color: rgb(255, 255, 255);    
+    border-left: 2px solid black;
+    border-right: 2px solid black;
 }
-
-
-/* Haut du site */
+h1{
+    text-align: center;
+}
+button {
+    padding: 15px 100px;
+    margin: 10px 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  button:hover {
+    opacity: 0.5;
+  }
+                        /* Haut du site */
 .userCompte{
     list-style-type: none;
     display: flex;
@@ -18,23 +35,30 @@
 
 }
 nav{
+    font-family: 'Roboto Slab', serif;
     display: flex;
+    z-index: 1;
+    width: 565px;
+    border-bottom: 3px black solid;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
     padding-right: 5px ;
     padding-left: 5px;
-    border: 1px rgb(226, 18, 18) solid;
+}
+ul{
+    display: flex;
+    position: relative;
+    right: 19px;
+    justify-content:center;
+    flex-direction: column;
+
 }
 .logo_header{
     width: 150px;
     padding: 10px;
 }
 .login_section{
-    border: 1px solid rgb(109, 0, 100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 }
 .logo_login{
@@ -43,10 +67,23 @@ nav{
 }
 
 
-/* Partie section et commentaire */
+                            /* Partie section et commentaire */
+
+
+
+                            
+.section_presentation{
+    text-align: center;
+    border-bottom: 3px solid black;
+}
+.h1_presentation{
+    text-align: center;
+}                      
+.p_presentation{
+    text-align: center;
+}      
 section{
     padding: 10px;
-    border: 1px solid blue;
 }
 .sectionActeur{
     display: flex;
@@ -54,7 +91,7 @@ section{
     flex-direction: column;
 }
 .bloc_partner{
-    border: 1px rgb(0, 85, 38) solid;
+    border: 2px rgb(0, 85, 38) solid;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -79,10 +116,10 @@ section{
     justify-content: flex-end;
 }
 
-/* Partie formulaire inscription/connection */
+
+                            /* Partie formulaire inscription/connection */
 form{
-    border: 1px black solid;
-    height: 300px;
+    height: 350px;
     text-align: center;
 }
 label{
@@ -91,23 +128,14 @@ label{
     flex-direction: column;
 }
 
-/* Pied de page */
+                            /* Pied de page */
 footer{
-    border: 1px black solid;
+    border-top: 3px black solid;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 1000px){
+                
+                            /* responsive mode*/
+/* @media screen and (min-width: 1000px){
 .container{
     margin: auto;
     width: 1000px;
@@ -115,7 +143,7 @@ footer{
     display: flex;
     flex-direction: column;
     background-color:#F3F5F3;
-}
+} */
 
 
 }
