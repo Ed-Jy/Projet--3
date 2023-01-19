@@ -1,58 +1,61 @@
 <?php
-//on demarre la session php
-session_start();
-//Je verifie mon id
-//if(!isset($_GET["id_acteur"]) || empty($_GET["id_acteur"])){
-    //je n'ai pas d'id
-//    header("Location: profil.php");
-//    exit;
-//}
-//Je récup l'id
+//Je verifie si j'ai un id    "||"
+// if(!isset($_GET["id_acteur"]) || !empty($_GET["id_acteur"])){
+//     //Je n'ai pas d'id
+//     die("Je n'ai pas d'id");
+// }
+
+//je recup l'id
 $id = $_GET["id_acteur"];
 
 //Je me connecte à la base de donnée
 require_once "includes/connect.php";
 
-//Je veias chercher l'acteur dans la base de donée
-//j'écris la requête
-$sql = "SELECT * FROM `acteur` WHERE `id_acteur`=:id";
+//Je vais chercher l'article dans ma bd
+//J'écris la request
+$sql = "SELECT * FROM `acteur` WHERE `id_acteur` = :id";
 
-//Je prépare la requête
-$requete = $db->prepare($sql);
+//On prépare la request
+$request = $db -> prepare($sql);
 
-//j'inject les paramètres
-$requete->bindValue(":id", $id, PDO::PARAM_INT);
+//J'injecte les paramêtre
 
-//j'execute la requête
-$requete->execute();
+$request -> bindValue(":id", $id, PDO::PARAM_INT);
 
-$acteur = $requete->fetch();
+//j'éxecute la request
+$request -> execute();
 
+//Je récupère l'article
+$acteur = $request->fetch();
 
-//permet de rediriger directement l'utilisateur index.php quand il est déconnecté
-if(!isset($_SESSION["user"])){
-    header("Location: index.php");
-    exit;
-}
+var_dump($acteur);
+
     //Nom de la page
-    $titrepage = $acteur["acteur"];
+    $titrepage = "$acteur[acteur]";
     
 
     // Includes "header"
-    include("includes/header.php");
-
+    include_once("includes/header.php");
     // Includes "sectionpresentation"
     include_once("includes/sectionpresentation.php")
-
 ?>
-<h2><?php echo $acteur["acteur"]?></h2>
-    <article class="bloc_partner">
-        <img/>
-        <h3><?php echo $acteur["acteur"]?></h3>
-        <p><?php echo $acteur["description"]?></p>
-    </article>
-</section>
 
+<section>
+<h2>Acteurs et Partenairs</h2>
+    <p>Voici une liste de nos partenaires et acteurs avec lesquels nous travaillons étroitement pour fournir les meilleurs produits et services à nos clients. Nous sommes fiers de ces collaborations et remercions chacun d'entre eux pour leur contribution à notre réussite.
+</p>
+    <section class="sectionActeur">
+            <article class="bloc_partner">
+                <div class="logo_png"><?php //echo $acteur["logo"] ?></div>
+                <div class="acteurDesc">
+                    <h3><?php echo $acteur["acteur"]?></h3>
+                    <?php $acteurDesc = substr($acteur["description"],0 ,200); ?>
+                    <p><?php echo "$acteurDesc...  "?></p>
+                </div>
+                    <a class="readMore" href="acteur.php?id=<?= $acteur["id_acteur"] ?>"><button>Lire la suite</button></a>
+            </article>
+    </section>
+</section>
 
 <?php
     // Includes "footer"

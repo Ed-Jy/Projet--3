@@ -30,15 +30,16 @@ if(!isset($_SESSION["user"])){
 ?>
 
 <section>
-<h2>Titre section acteurs et partenairs</h2>
-    <p>Texte acterus et partenaires</p>
+<h2>Acteurs et Partenairs</h2>
+    <p>Voici une liste de nos partenaires et acteurs avec lesquels nous travaillons étroitement pour fournir les meilleurs produits et services à nos clients. Nous sommes fiers de ces collaborations et remercions chacun d'entre eux pour leur contribution à notre réussite.
+</p>
     <section class="sectionActeur">
-        <?php foreach($acteurs as $acteur): ?>    
+        <?php foreach($acteurs as $acteur): ?> 
             <article class="bloc_partner">
                 <div class="logo_png"><?php //echo $acteur["logo"] ?></div>
                 <div class="acteurDesc">
                     <h3><?php echo $acteur["acteur"]?></h3>
-                    <?php $acteurDesc = substr($acteur["description"],0 ,60); ?>
+                    <?php $acteurDesc = substr($acteur["description"],0 ,200); ?>
                     <p><?php echo "$acteurDesc...  "?></p>
                 </div>
                     <a class="readMore" href="acteur.php?id=<?= $acteur["id_acteur"] ?>"><button>Lire la suite</button></a>
@@ -47,7 +48,7 @@ if(!isset($_SESSION["user"])){
     </section>
 </section>
 
-
+<?php var_dump($acteurs)?>
 <?php
     // Includes "footer"
     include("includes/footer.php");

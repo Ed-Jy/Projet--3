@@ -70,16 +70,18 @@ if(isset($_SESSION["user"])){
             //Je n'arrive pas à récupérer imédiatement les informations comme avec connexion
              
         }else{
-            echo("<p>Le formulaire est incomplet*</p>");
+            echo("<p>...Le formulaire est incomplet...*</p>");
         }
     }
     //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
+//Nom de la page
+$titrepage = "Page d'inscription";
 
-    //Nom de la page
-    $titrepage = "Page d'inscription";
+// Includes "header"
+include("includes/header.php");
+// Includes "sectionpresentation.php"
+include_once("includes/sectionpresentation.php");
 
-    // Includes "header"
-    include("includes/header.php");
 ?>
 <article>  
 <h1>Inscription</h1>
