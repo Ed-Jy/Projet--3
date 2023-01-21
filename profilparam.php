@@ -15,10 +15,6 @@ if(!isset($_SESSION["user"])){
     include("includes/header.php");
     // Includes "sectionpresentation"
     include_once("includes/sectionpresentation.php");
-
-    var_dump($_SESSION);
-    var_dump($_POST);
-
 ?>
 <section id="profil_param">
 <h1 >Modifier mes imformations</h1>
