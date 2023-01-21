@@ -35,7 +35,7 @@ if(!isset($_SESSION["user"])){
 </p>
     <section class="sectionActeur">
         <?php foreach($acteurs as $acteur): ?> 
-            <article class="bloc_partner">
+            <section class="bloc_partner">
                 <div class="logo_png"><?php //echo $acteur["logo"] ?></div>
                 <div class="acteurDesc">
                     <h3><?php echo $acteur["acteur"]?></h3>
@@ -43,12 +43,12 @@ if(!isset($_SESSION["user"])){
                     <p><?php echo "$acteurDesc...  "?></p>
                 </div>
                     <a class="readMore" href="acteur.php?id=<?= $acteur["id_acteur"] ?>"><button>Lire la suite</button></a>
-            </article>
+            </section>
             <?php endforeach; ?> 
     </section>
 </section>
 
-<?php var_dump($acteurs)?>
+<?php //var_dump($acteurs)?>
 <?php
     // Includes "footer"
     include("includes/footer.php");

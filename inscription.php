@@ -83,7 +83,7 @@ include("includes/header.php");
 include_once("includes/sectionpresentation.php");
 
 ?>
-<article>  
+<section>  
 <h1>Inscription</h1>
     <form method="post">
             <div>
@@ -111,7 +111,7 @@ include_once("includes/sectionpresentation.php");
             </br>
             <button type="submit">M'inscrire</button>
     </form>
-</article>
+</section>
 
 
         <?php

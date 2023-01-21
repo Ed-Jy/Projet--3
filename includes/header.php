@@ -20,7 +20,7 @@
             <?php else:?>
                 <li class="userCompte" ><img class="logo_login" src="ressources/login.png"><?= $_SESSION["user"]["nom"]." ".$_SESSION["user"]["prenom"]?></li>
                 <li class="userCompte"><a href="profilparam.php">Paramêtres du compte</a></li>
-                <li class="userCompte"><a href="deconnexion.php">Deconnexion</a></li>
+                <li class="userCompte"><a href="deconnexion.php">Deconnexion</a></li>    
             <?php endif; ?>   
           </ul>  
         </div>

@@ -66,7 +66,7 @@ if(!empty($_POST)){
 
 
 ?>
-<article>  
+<section>  
 <h1>Connexion</h1>
     <form method="post">
             <div>
@@ -82,7 +82,7 @@ if(!empty($_POST)){
             </br>
             <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a>
     </form>
-</article>
+</section>
 
 
         <?php
