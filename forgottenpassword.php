@@ -33,7 +33,7 @@ if(!empty($_POST)){
             die("L'utilisateur et/ou la réponse secrète est incorrect.");
         }
         //Ici le user existe, on peut verifier son mdp
-        if(!password_verify($_POST["pass"], $user["pass"])){
+        if(!password_verify($_POST["reponse"], $user["reponse"])){
             die("L'utilisateur et/ou la réponse secrète est incorrect.");
         }
         //L'utilisateur et le mdp sont corrects.
@@ -73,7 +73,7 @@ if(!empty($_POST)){
                 <input type="text" name="nickname" id="pseudo">
             </div>         
             <div>
-                <label for="question">Quel est la marque de votre première voiture ?</label>
+                <label for="question">Quel est votre film préféré ?</label>
                 <input type="text" name="reponse" id="reponse">
             </div>
             </br>

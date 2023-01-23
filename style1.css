@@ -124,16 +124,23 @@ section{
     -moz-box-shadow              :              5px 5px 5px rgb(0, 0, 0);
     -o-box-shadow                :              5px 5px 5px rgb(0, 0, 0);
     -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
-
+}
+.bloc_Acteur{
+    border: 2px rgb(0, 0, 0) solid;
+    border-radius : 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    box-shadow: black;
+    -moz-box-shadow              :              5px 5px 5px rgb(0, 0, 0);
+    -o-box-shadow                :              5px 5px 5px rgb(0, 0, 0);
+    -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
 }
 .logo_png{
     width: 400px;
-    height: 150px;
-    margin: 10px;
-    border: 1px rgb(0, 0, 0) solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 5px;
 }
 .acteurDesc{
     width: 400px;
@@ -227,6 +234,7 @@ ul{
     justify-content: space-between;
     margin: 5px;
 }
+
 .readMore{
     position: relative;
     top: 50px;
@@ -234,10 +242,7 @@ ul{
     right: 2px;
 }
 .logo_png{
-    width: 300px;
-    height: 113px;
-    margin: 10px;
-    border: 1px rgb(0, 0, 0) solid;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;

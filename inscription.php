@@ -102,10 +102,11 @@ include_once("includes/sectionpresentation.php");
                 <label for="pass">Mot de passe:</label>
                 <input type="password" name="pass" id="pass">
             </div>
-            </br>
+
             <div>
-                <label for="question">Quel est la marque de votre première voiture ?</label>
-                </br>
+                <br>
+                <label for="question">Quel est votre film préféré ?</label>
+                
                 <input type="text" name="reponse" id="reponse">
             </div>
             </br>
