@@ -34,7 +34,7 @@ if(isset($_POST["submit_commentaire"])){
         $ins->execute(array($iduser, $id, $date_creation, $post_Com ));
         $c_msg = " <span style='color:green'>Votre commentaire a bien été posté</span>";
     }else{
-        $c_msg = 'Erreur: Tous les champs doivent être complétés';
+        $c_msg = "<span style='color:red'>Erreur: Vous devez écrire un commentaire pour le poster</span>";
     }
 }
 
@@ -54,21 +54,24 @@ $titrepage = "$acteur[acteur]";
                 <h3><?php echo $acteur["acteur"]?></h3>
                 <p><?php echo $acteur["description"]?></p>
             </div>
+            <div class="acteur_Like">
+                <p>(count)</p>
+                <p>+</p>
+                <p>-</p>
+            </div>
         </article>
-        <article class="bloc_Acteur">
-            <h3>Commentaires:</h3>
-            <form method="post">
+        <h3>Commentaires:</h3>
+        <article class="bloc_Commentaires">
+            <form class="form_coms" method="post">
                 <label for=""><?php echo $_SESSION["user"]["pseudo"];  ?></label>
                 <?php if(isset($c_msg)){ echo $c_msg; } ?>
                 <br>
-                <textarea name="post" id="" placeholder="Votre commentaire..." cols="30" rows="10"></textarea>
+                <textarea name="post" id="" placeholder="Votre commentaire..." cols="50" rows="5"></textarea>
                 <br>
                 <input type="submit" value="Poster mon commentaire" name="submit_commentaire">
             </form>
             <br>
         </article>
-            <article>
-            </article>  
         <a class="" href="profil.php"><button>Revenir aux Acteurs et Partenairs</button></a>
         
 </section>

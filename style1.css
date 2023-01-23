@@ -77,10 +77,6 @@ ul{
 
 
                             /* Partie section et commentaire */
-
-
-
-                            
 .section_presentation{
     text-align: center;
     border-bottom: 3px solid #9e1c2f;
@@ -138,6 +134,24 @@ section{
     -o-box-shadow                :              5px 5px 5px rgb(0, 0, 0);
     -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
 }
+.bloc_Commentaires{
+    border: 2px rgb(0, 0, 0) solid;
+    width: 500px;
+    border-radius : 5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    box-shadow: black;
+    -moz-box-shadow              :              5px 5px 5px rgb(0, 0, 0);
+    -o-box-shadow                :              5px 5px 5px rgb(0, 0, 0);
+    -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
+}
+textarea{
+    resize: none;
+    border: #000000 solid 2px;
+}
 .logo_png{
     width: 400px;
     padding: 5px;
@@ -150,6 +164,10 @@ section{
     position: relative;
     left: 112px;
 }
+.acteur_Like{
+    display: flex;
+    justify-content:space-around
+}
 
                             /* Partie formulaire inscription/connection */
 form{
@@ -160,6 +178,10 @@ form{
     border: 1px black solid;
     border-radius: 5px;
     align-items: center;
+}
+.form_coms{
+    width: 400px;
+    border: unset;
 }
 label{
     /*border: 1px black solid;*/
