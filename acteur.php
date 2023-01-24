@@ -26,21 +26,21 @@ $request -> execute();
 //Je récupère l'article
 $acteur = $request->fetch();
 
-if(isset($_POST["submit_commentaire"])){
-    if(isset($_POST["post"]) AND !empty($_POST["post"])){
-        $commentaire = htmlspecialchars($_POST["post"]);
-        //je prépare ma bd pour envoyer mon commentaire 
-        $ins = $db->prepare('INSERT INTO `post`(`id_user`, `id_acteur`, `date_add`, `post`) VALUES (? , ?, ?, ?)');
-        $ins->execute(array($iduser, $id, $date_creation, $post_Com ));
-        $c_msg = " <span style='color:green'>Votre commentaire a bien été posté</span>";
-    }else{
-        $c_msg = "<span style='color:red'>Erreur: Vous devez écrire un commentaire pour le poster</span>";
+    if(isset($_POST["submit_commentaire"])){
+        if(isset($_POST["post"]) AND !empty($_POST["post"])){
+            $commentaire = htmlspecialchars($_POST["post"]);
+            //je prépare ma bd pour envoyer mon commentaire 
+            $ins = $db->prepare('INSERT INTO `post`(`id_user`, `id_acteur`, `date_add`, `post`) VALUES (? , ?, ?, ?)');
+            $ins->execute(array($iduser, $id, $date_creation, $post_Com ));
+            $c_msg = " <span style='color:green'>Votre commentaire a bien été posté</span>";
+        }else{
+            $c_msg = "<span style='color:red'>Erreur: Vous devez écrire un commentaire pour le poster</span>";
+        }
     }
-}
+//requête des commentaires / 'ORDER BY `id_post` desc' pour faire remonter le commentaire le plus rescend
+$commentaires = $db->prepare('SELECT * FROM `post` WHERE `id_acteur` = ? ORDER BY `id_post`desc');
+$commentaires-> execute(array($id));
 
-var_dump($id,);
-var_dump($iduser);
-var_dump($date_creation);
 //Nom de la page
 $titrepage = "$acteur[acteur]";
     // Includes "header"
@@ -55,22 +55,28 @@ $titrepage = "$acteur[acteur]";
                 <p><?php echo $acteur["description"]?></p>
             </div>
             <div class="acteur_Like">
-                <p>(count)</p>
-                <p>+</p>
-                <p>-</p>
+                <a href="includes/action.php?t=like&id=<?php $id ?>">J'aime</a> (15)
+                </br>
+                <a href="includes/action.php?t=dislike&id=<?php $id ?>">Je n'aime pas</a>
             </div>
         </article>
-        <h3>Commentaires:</h3>
         <article class="bloc_Commentaires">
+        <h3>Commentaires:</h3>
             <form class="form_coms" method="post">
-                <label for=""><?php echo $_SESSION["user"]["pseudo"];  ?></label>
                 <?php if(isset($c_msg)){ echo $c_msg; } ?>
                 <br>
-                <textarea name="post" id="" placeholder="Votre commentaire..." cols="50" rows="5"></textarea>
+                <textarea name="post" id="" placeholder="Votre commentaire..." cols="40" rows="5"></textarea>
                 <br>
                 <input type="submit" value="Poster mon commentaire" name="submit_commentaire">
             </form>
-            <br>
+            
+            <?php while($c = $commentaires->fetch()){?>
+                <div class="commentaire">
+                <b>Pseudo:<? $c['id_user']?></b>
+                <p class="p_commentaire_date">Posté le: <?= $c['date_add']?></p>
+                <p class="p_commentaire_post" ><?= $c['post']?></p> 
+                </div>  
+            <?php } ?>        
         </article>
         <a class="" href="profil.php"><button>Revenir aux Acteurs et Partenairs</button></a>
         
@@ -80,7 +86,5 @@ $titrepage = "$acteur[acteur]";
 <?php
     // Includes "footer"
     include("includes/footer.php");
-    // var_dump($_POST);
-    // var_dump($_SESSION);
-    
+    var_dump($iduser);
 ?>

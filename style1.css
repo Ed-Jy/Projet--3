@@ -136,7 +136,7 @@ section{
 }
 .bloc_Commentaires{
     border: 2px rgb(0, 0, 0) solid;
-    width: 500px;
+    width: 402px;
     border-radius : 5px;
     display: flex;
     text-align: center;
@@ -167,6 +167,28 @@ textarea{
 .acteur_Like{
     display: flex;
     justify-content:space-around
+}
+.commentaire{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    justify-content: unset;
+    text-align:start;
+    background-color: white;
+    border-radius : 5px;
+    margin: 5px;
+    box-shadow: black;
+    -moz-box-shadow              :              5px 5px 5px rgb(0, 0, 0);
+    -o-box-shadow                :              5px 5px 5px rgb(0, 0, 0);
+    -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
+}
+.p_commentaire_post{
+    padding: -10px;
+}
+.p_commentaire_date{
+    position: relative;
+    bottom: 15px;
 }
 
                             /* Partie formulaire inscription/connection */
@@ -264,8 +286,9 @@ ul{
     right: 2px;
 }
 .logo_png{
+    border: 2px solid rgb(0, 0, 0);
     width: 400px;
-    padding: 5px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
