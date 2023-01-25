@@ -184,11 +184,14 @@ textarea{
     -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
 }
 .p_commentaire_post{
-    padding: -10px;
 }
 .p_commentaire_date{
-    position: relative;
-    bottom: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.b_commentaire{
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
                             /* Partie formulaire inscription/connection */

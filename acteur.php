@@ -72,7 +72,7 @@ $titrepage = "$acteur[acteur]";
             
             <?php while($c = $commentaires->fetch()){?>
                 <div class="commentaire">
-                <b>Pseudo:<? $c['id_user']?></b>
+                <b class="b_commentaire" >Pseudo:<? $c['id_user']?></b>
                 <p class="p_commentaire_date">Posté le: <?= $c['date_add']?></p>
                 <p class="p_commentaire_post" ><?= $c['post']?></p> 
                 </div>  
