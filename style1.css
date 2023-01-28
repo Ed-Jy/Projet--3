@@ -183,8 +183,6 @@ textarea{
     -o-box-shadow                :              5px 5px 5px rgb(0, 0, 0);
     -webkit-box-shadow           :              5px 5px 5px rgb(0, 0, 0);
 }
-.p_commentaire_post{
-}
 .p_commentaire_date{
     margin-top: 0px;
     margin-bottom: 0px;

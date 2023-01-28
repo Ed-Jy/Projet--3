@@ -7,10 +7,36 @@ if(!isset($_SESSION["user"])){
     header("Location: index.php");
     exit;
 }
+
+    //verif si formulaire envoyé
+if(!empty($_POST)){ 
+    //Le formulaire à été envoyé
+    //Je verif que le champ pseudo est remplis
+if(isset($_POST["nickname"]) && !empty($_POST["nickname"])){
+    //je protège les donées
+    $pseudo = ($_POST["nickname"]);
+    //je me connect à la DB
+    require_once "includes/connect.php";
+
+    $sql = "UPDATE `account`
+            SET `nickname` = ?";
+
+    $query = $db->prepare($sql);
+
+    $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
+
+    $query->execute();
+
+}else{
+    die("champ vide");
+}
+
+
+}
     //Nom de la page
     $titrepage = "Paramêtre";
     
-
+var_dump($_POST);
     // Includes "header"
     include("includes/header.php");
     // Includes "sectionpresentation"
