@@ -44,10 +44,59 @@ $acteur = $request->fetch();
             $c_msg = "<span style='color:red'>Erreur: Vous devez écrire un commentaire pour le poster</span>";
         }
     }
+//fonction like/dislike
+function vote($iduser, $id, $vote){
+
+    $iduser = $_SESSION["user"]["id"];
+    $id = $_GET["id_acteur"];
+    require_once('includes/connect.php');
+    
+    if($vote == 1){
+        echo "like";
+        // Si ça n'existe pas  => l'association id_user et id_acteur pas dans la table VOTE
+        if(isset($id, $iduser)){
+            $inslike = $db->prepare('INSERT INTO `vote`(`id_user`, `id_acteur`, `vote`) VALUES (:iduser, :idacteur, :vote)');
+            $inslike->bindValue( ":iduser", $iduser);
+            $inslike->bindValue( ":idacteur", $id);
+            $inslike->bindValue( ":vote", $vote);
+            $inslike->execute();
+        }else{
+            echo " j'existe pas";
+        }
+        
+
+        // INSERT INTO `vote`(`id_user`, `id_acteur`, `vote`) VALUES ( 1,1, $vote)
+        // Si ça existe déja 
+        //UPDATE
+    }
+    elseif($vote == -1){
+        echo "Dislike";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //requête des commentaires / 'ORDER BY `id_post` desc' pour faire remonter le commentaire le plus rescend
 $commentaires = $db->prepare('SELECT * FROM `post`, `account` WHERE post.id_user = account.id_user AND `id_acteur` = ? ORDER BY `id_post`desc');
 $commentaires-> execute(array($id));
-var_dump($commentaires);
+
 //Nom de la page
 $titrepage = "$acteur[acteur]";
     // Includes "header"
@@ -62,9 +111,16 @@ $titrepage = "$acteur[acteur]";
                 <p><?php echo $acteur["description"]?></p>
             </div>
             <div class="acteur_Like">
-                <a href="">J'aime</a> (15)
-                </br>
-                <a href="">Je n'aime pas</a>
+                 <a href="acteur.php?vote=1&id_acteur=<?= $id ?>">J'aime</a>
+                <br>
+                <a href="acteur.php?vote=-1&id_acteur=<?= $id ?>">J'aime pas</a>
+                <br>
+                <a href="acteur.php?vote=0&id_acteur=<?= $id ?>">Je n'aime plus</a>
+                            <?php 
+                        if (isset($_GET['vote']))
+                            vote(1,1, $_GET['vote']);
+                    
+                            ?>
             </div>
         </article>
         <article class="bloc_Commentaires">
@@ -81,7 +137,7 @@ $titrepage = "$acteur[acteur]";
               
                 <div class="commentaire">
                   
-                <b class="b_commentaire" >Pseudo:<?= $c['username']?></b>
+                <b class="b_commentaire" ><?= $c['prenom']." ". $c['nom']?></b>
                 <p class="p_commentaire_date">Posté le: <?= $c['date_add']?></p>
                 <p class="p_commentaire_post" ><?= $c['post']?></p> 
                 </div>  

@@ -1,6 +1,7 @@
 <?php
-$vote=1;
-    function vote($id_user, $id_acteur, $vote){
+session_start();
+
+    function vote($iduser, $id, $vote){
         if($vote == 1){
             echo "like";
             // Si ça n'existe pas  => l'association id_user et id_acteur pas dans la table VOTE
@@ -13,7 +14,6 @@ $vote=1;
             echo "J'aime pas";
         }
 }
-echo $vote;
 ?>
 <!DOCTYPE html>
 <html lang="en">

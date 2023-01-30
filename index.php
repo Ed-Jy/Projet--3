@@ -18,15 +18,10 @@ if(!empty($_POST)){
         $pseudo = strip_tags($_POST["nickname"]);    
         //Je me connect à la base de donnée
         require_once "includes/connect.php";
-
         $sql = "SELECT * FROM `account` WHERE `username` = :pseudo";
-
         $query = $db->prepare($sql);
-
         $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
-
         $query->execute();
-
         $user = $query->fetch();
 
         if(!$user){
@@ -54,7 +49,6 @@ if(!empty($_POST)){
         
     }    
 }
-    //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
 
     //Nom de la page
     $titrepage = "Connexion";
@@ -80,7 +74,7 @@ if(!empty($_POST)){
             </br>
             <button type="submit">Me connecter</button>
             </br>
-            <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a>
+            <!-- <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a> -->
     </form>
 </section>
 
