@@ -165,8 +165,15 @@ textarea{
     left: 112px;
 }
 .acteur_Like{
+    position: relative;
+    left: 215px;
     display: flex;
     justify-content:space-around
+}
+.icon_like{
+    width: 30px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .commentaire{
     padding: 5px;

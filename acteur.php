@@ -111,9 +111,9 @@ $titrepage = "$acteur[acteur]";
                 <p><?php echo $acteur["description"]?></p>
             </div>
             <div class="acteur_Like">
-                 <a href="acteur.php?vote=1&id_acteur=<?= $id ?>">J'aime</a>
+                 <a href="acteur.php?vote=1&id_acteur=<?= $id ?>"><img class="icon_like" src="ressources/like_dislike/like_off.png" alt=""></a>
                 <br>
-                <a href="acteur.php?vote=-1&id_acteur=<?= $id ?>">J'aime pas</a>
+                <a href="acteur.php?vote=-1&id_acteur=<?= $id ?>"><img class="icon_like" src="ressources/like_dislike/dislike_off.png" alt=""></a>
                 <br>
                 <a href="acteur.php?vote=0&id_acteur=<?= $id ?>">Je n'aime plus</a>
                             <?php 
