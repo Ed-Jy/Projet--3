@@ -172,9 +172,25 @@ textarea{
 }
 .icon_like{
     width: 30px;
-    padding-left: 7px;
-    padding-right: 7px;
+    height: 30px;
+    background-size: cover;
 }
+
+.iconLikeOn{
+    background-image: url("./ressources/like_dislike/like_on.png");
+}
+.iconLikeOff{
+    background-image: url("./ressources/like_dislike/like_off.png");   
+    cursor: pointer; 
+}
+.iconDislikeOn{
+    background-image: url("./ressources/like_dislike/dislike_on.png");    
+}
+.iconDislikeOff{
+    background-image: url("./ressources/like_dislike/dislike_off.png");
+    cursor: pointer; 
+}
+
 .commentaire{
     padding: 5px;
     display: flex;
