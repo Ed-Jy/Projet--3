@@ -18,7 +18,6 @@ if(!isset($_SESSION["user"])){
 $iduser = $_SESSION["user"]["id"];
 $id = $_GET["id_acteur"];
 $date_creation = date('Y-m-d H:i:s');
-
 //---------------------J'affiche mon acteur selon l'id_acteur-------------//
 //Je me connecte à la base de donnée
 require "includes/connect.php";
@@ -33,26 +32,17 @@ $request -> bindValue(":id", $id, PDO::PARAM_INT);
 $request -> execute();
 //Je récupère l'article
 $acteur = $request->fetch();
-
-var_dump($id);
-var_dump($iduser);
-
 //---------------------Gestion des votes existants
-
 // 1- Nombre de votes
 $NBVotes = sqlGetNBVotes($db,$id);
-
 // 2- Récup du vote de l'utilisateur courrant s'il existe
 $voteUser = null;
 $reqSQL = "SELECT vote FROM vote WHERE id_user=$iduser and id_acteur=$id";
-echo $reqSQL;
 $resultVoteUser = $db->prepare($reqSQL);
 $resultVoteUser->execute();
 if($result = $resultVoteUser->fetch()){
     $voteUser = $result["vote"];
-    echo "eee $voteUser eee";
 }
-echo "ee $voteUser ee";
 //---------------------Poster le commentaire---------------------//
     if(isset($_POST["submit_commentaire"])){
         if(isset($_POST["post"]) AND !empty($_POST["post"])){
@@ -109,8 +99,6 @@ $titrepage = "$acteur[acteur]";
             </div>
             <div class="acteur_Like">
                 <form method="post">
-
-
                 <?
                         switch($voteUser){
                             case 1:
@@ -130,22 +118,7 @@ $titrepage = "$acteur[acteur]";
                                 echo '<input class="icon_like iconDislikeOff" type="submit" title="DISLIKE" value="-1" name="vote" />'; 
                                 break;
                         }                 
-
-
-
                 ?>
-
-                    <!--<a href="acteur.php?vote=1&id_acteur=<?= $id ?>"></a>
-                    
-                  
-                    
-
-
-                    <br>
-                    <a href="acteur.php?vote=-1&id_acteur=<?= $id ?>"><img class="icon_like" src="ressources/like_dislike/dislike_off.png" alt=""></a>
-                    
-                    <br>
-                    <a href="acteur.php?vote=0&id_acteur=<?= $id ?>">Je n'aime plus</a>-->
                 </form>
                             
             </div>

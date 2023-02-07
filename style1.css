@@ -165,17 +165,14 @@ textarea{
     left: 112px;
 }
 .acteur_Like{
-    position: relative;
-    left: 215px;
     display: flex;
-    justify-content:space-around
+    flex-direction: row;
 }
 .icon_like{
     width: 30px;
     height: 30px;
     background-size: cover;
 }
-
 .iconLikeOn{
     background-image: url("./ressources/like_dislike/like_on.png");
 }
