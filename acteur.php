@@ -97,8 +97,7 @@ $titrepage = "$acteur[acteur]";
                 <h3><?php echo $acteur["acteur"]?></h3>
                 <p><?php echo $acteur["description"]?></p>
             </div>
-            <div class="acteur_Like">
-                <form method="post">
+                <form class="like_dislike" method="post">
                 <?
                         switch($voteUser){
                             case 1:
@@ -120,8 +119,6 @@ $titrepage = "$acteur[acteur]";
                         }                 
                 ?>
                 </form>
-                            
-            </div>
         </article>
         <article class="bloc_Commentaires">
         <h3>Commentaires:</h3>
