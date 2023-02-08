@@ -74,7 +74,7 @@ if(!empty($_POST)){
             </br>
             <button type="submit">Me connecter</button>
             </br>
-            <!-- <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a> -->
+            <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a>
     </form>
 </section>
 

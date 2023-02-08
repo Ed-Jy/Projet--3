@@ -14,48 +14,27 @@ if(!empty($_POST)){
     if(isset($_POST["nickname"], $_POST["reponse"])
     && !empty($_POST["nickname"]) && !empty($_POST["reponse"])
         ){
-        //on récupère les données en les protégeant
-        $pseudo = strip_tags($_POST["nickname"]);  
-        //Je me connect à la base de donnée
-        require_once "includes/connect.php";
-
-        $sql = "SELECT * FROM `account` WHERE `username` = :pseudo";
-
+        $pseudo = $_POST["nickname"];
+        $rep = $_POST["reponse"];    
+        //je connect la BD
+        require('./includes/connect.php');
+        $sql = "SELECT * FROM `account` WHERE username=:pseudo AND reponse=:reponse";
         $query = $db->prepare($sql);
-
         $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
-
+        $query->bindValue(":reponse", $rep, PDO::PARAM_STR);
         $query->execute();
-
-        $user = $query->fetch();
-
-        if(!$user){
-            die("L'utilisateur et/ou la réponse secrète est incorrect.");
+        $user_rep = $query->fetch();
+        if(!$user_rep){
+            die("L'utilisateur et/ou le mot de passe est incorrect.");
+        }else{
+            header("Location: modifmdp.php");
+            exit; 
         }
-        //Ici le user existe, on peut verifier son mdp
-        if(!password_verify($_POST["reponse"], $user["reponse"])){
-            die("L'utilisateur et/ou la réponse secrète est incorrect.");
+        }else{
+            echo "c'est pas ça";
         }
-        //L'utilisateur et le mdp sont corrects.
-        //On va pouvoir connecter l'utilisateur, ouvrir la session.
-        //on demarre la session php
-        session_start();
-
-        // Je stock dans $_SESSION les inforamtions de l'utilisateur
-        $_SESSION["user"] = [
-            "id" => $user["id_user"],
-            "pseudo" => $user["username"],
-            "nom" => $user["nom"],
-            "prenom" => $user["prenom"]
-        ];
-        var_dump($_SESSION);
-        //Je peux rediriger vers une page de profile
-        header("Location: profil.php");
-        
-    }    
-}
-    //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
-
+            
+    }
     //Nom de la page
     $titrepage = "Mot de passe oublié";
 
@@ -77,13 +56,12 @@ if(!empty($_POST)){
                 <input type="text" name="reponse" id="reponse">
             </div>
             </br>
-            <button type="submit">Me connecter</button>
+            <button type="submit">Changer le mot de passe</button>
     </form>
 </article>
 
 
         <?php
-
     // Includes "footer"
     include("includes/footer.php");
 ?>
