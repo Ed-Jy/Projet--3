@@ -6,7 +6,7 @@
     include_once("includes/header.php");
     ?>
     <section>
-        <p>Les modifications sur votre profil on été prit en compte.</p>
+        <p>Les modifications sur votre profil on été pris en compte.</p>
         <p>Veuillez vous reconnecter</p>
         <a class="" href="profil.php"><button>Revenir à la page de connection</button></a>
     </section>
