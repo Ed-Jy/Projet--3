@@ -28,7 +28,7 @@ if(!empty($_POST)){
                 //Supprime une variable
                 unset($_SESSION["user"]);
 
-                header("Location: index.php");
+                header("Location: valid_account.php");
             }else{
                 $c_msg = "<span style='color:red'>Erreur: Vous devez indiquer un nouveau pseudo</span>";
             }

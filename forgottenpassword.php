@@ -6,7 +6,6 @@ if(isset($_SESSION["user"])){
     header("Location: profil.php");
     exit;
 }
-
     //on verifie si le formulaire à été envoyé
 if(!empty($_POST)){
         //Le formulaire à été envoyé
@@ -23,10 +22,10 @@ if(!empty($_POST)){
         $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
         $query->bindValue(":reponse", $rep, PDO::PARAM_STR);
         $query->execute();
-        $user_rep = $query->fetch();
-        if(!$user_rep){
+        $user = $query->fetch();
+        if(!$user){
             $c_msg = "<span style='color:red'>L'utilisateur et/ou la réponse secrète est incorrect.</span>";
-        }else{
+        }
         //On va pouvoir connecter l'utilisateur, ouvrir la session.
         //on demarre la session php
         session_start();
@@ -42,9 +41,8 @@ if(!empty($_POST)){
         header("Location: modifmdp.php");
         
         }
-        }else{
-            echo "c'est pas ça";
-        }
+        $c_msg = "<span style='color:red'>Veuillez remplir tout les champs.</span>";
+        
             
     }
     //Nom de la page
@@ -59,7 +57,6 @@ if(!empty($_POST)){
 <section> 
 <h1>Connexion</h1>
     <form method="post">
-    <?php if(isset($c_msg)){ echo $c_msg; } ?>
             <div>
                 <label for="pseudo">Pseudo:</label>
                 <input type="text" name="nickname" id="pseudo">
@@ -69,6 +66,7 @@ if(!empty($_POST)){
                 <input type="text" name="reponse" id="reponse">
             </div>
             </br>
+            <?php if(isset($c_msg)){ echo $c_msg; } ?>
             <button type="submit">Changer le mot de passe</button>
     </form>
 </section>

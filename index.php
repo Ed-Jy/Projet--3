@@ -71,9 +71,11 @@ if(!empty($_POST)){
                 <input type="password" name="pass" id="pass">
             </div>
             </br>
+            <?php if(isset($c_msg)){ echo $c_msg;} ?>
             <button type="submit">Me connecter</button>
             </br>
             <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a>
+            </br>
     </form>
 </section>
 

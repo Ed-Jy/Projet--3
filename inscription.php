@@ -70,7 +70,7 @@ if(isset($_SESSION["user"])){
             //Je n'arrive pas à récupérer imédiatement les informations comme avec connexion
              
         }else{
-            echo("<p>...Le formulaire est incomplet...*</p>");
+            $c_msg = "<span style='color:red'>Erreur: ...Le formulaire est incomplet...*</span>";
         }
     }
     //var_dump($_POST); //verification avec un var_dump de l'envoi dans l'url
@@ -110,6 +110,7 @@ include_once("includes/sectionpresentation.php");
                 <input type="text" name="reponse" id="reponse">
             </div>
             </br>
+            <?php if(isset($c_msg)){ echo $c_msg;} ?>
             <button type="submit">M'inscrire</button>
     </form>
 </section>
