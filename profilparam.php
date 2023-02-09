@@ -19,8 +19,7 @@ if(!empty($_POST)){
                 $pseudo = strip_tags($_POST["pseudomodif"]);
                 //je me connect à la DB
                 require_once "includes/connect.php";
-                //Trouver la solution pour faire une update seulement du `account`-> `username` sans précision l'update prend la valeur
-                //en compte et remplace tout les username par la valeur indiqué. !!PROB!!
+                //Update
                 $query = $db->prepare("UPDATE `account` SET `username`='$pseudo' WHERE `username`= '$pseudoNow'");
                 $query->execute();
                 //message

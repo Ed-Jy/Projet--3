@@ -43,7 +43,6 @@ if(!empty($_POST)){
             "nom" => $user["nom"],
             "prenom" => $user["prenom"]
         ];
-        var_dump($_SESSION);
         //Je peux rediriger vers une page de profile
         header("Location: profil.php");
         

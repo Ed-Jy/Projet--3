@@ -1,6 +1,7 @@
 <?php
 //on demarre la session php
 session_start();
+var_dump($_SESSION);
 //je veux afficher les acteurs/partenaires da ma bdd
 //Je me connecte à la base de donnée
 require_once "includes/connect.php";

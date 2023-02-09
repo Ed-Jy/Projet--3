@@ -25,10 +25,22 @@ if(!empty($_POST)){
         $query->execute();
         $user_rep = $query->fetch();
         if(!$user_rep){
-            die("L'utilisateur et/ou le mot de passe est incorrect.");
+            $c_msg = "<span style='color:red'>L'utilisateur et/ou la réponse secrète est incorrect.</span>";
         }else{
-            header("Location: modifmdp.php");
-            exit; 
+        //On va pouvoir connecter l'utilisateur, ouvrir la session.
+        //on demarre la session php
+        session_start();
+
+        // Je stock dans $_SESSION les inforamtions de l'utilisateur
+        $_SESSION["user"] = [
+            "id" => $user["id_user"],
+            "pseudo" => $user["username"],
+            "nom" => $user["nom"],
+            "prenom" => $user["prenom"]
+        ];
+        //Je peux rediriger vers une page de profile
+        header("Location: modifmdp.php");
+        
         }
         }else{
             echo "c'est pas ça";
@@ -44,9 +56,10 @@ if(!empty($_POST)){
     // Includes "sectionpresentation"
     include_once("includes/sectionpresentation.php")
 ?>
-<article>  
+<section> 
 <h1>Connexion</h1>
     <form method="post">
+    <?php if(isset($c_msg)){ echo $c_msg; } ?>
             <div>
                 <label for="pseudo">Pseudo:</label>
                 <input type="text" name="nickname" id="pseudo">
@@ -58,7 +71,7 @@ if(!empty($_POST)){
             </br>
             <button type="submit">Changer le mot de passe</button>
     </form>
-</article>
+</section>
 
 
         <?php
