@@ -45,17 +45,12 @@ if(isset($_SESSION["user"])){
             if(!$query->execute()){
                 die("Une erreur est survenue");
             }
-            //On récupère l'id de l'article
+            //On récupère l'id
             $id = $db->lastInsertId();
-            // Modifier pendant la session de mentorat
             $sql = "SELECT * FROM `account` WHERE `username` = :pseudo";
-
-            $query = $db->prepare($sql);
-    
+            $query = $db->prepare($sql);   
             $query->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
-    
-            $query->execute();
-    
+            $query->execute();  
             $user = $query->fetch();
             // Je stock dans $_SESSION les inforamtions de l'utilisateur
             $_SESSION["user"] = [
