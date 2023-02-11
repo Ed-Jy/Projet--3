@@ -55,7 +55,7 @@ if(!empty($_POST)){
     // Includes "header"
     include_once("includes/header.php");
     // Includes "sectionpresentation.php"
-    include_once("includes/sectionpresentation.php");
+    // include_once("includes/sectionpresentation.php");
 
 
 ?>

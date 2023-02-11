@@ -47,7 +47,7 @@ if(!empty($_POST)){
         <br/>
         <br/>
             <?php if(isset($c_msg)){ echo $c_msg; } ?>
-            <input type="submit" value="Changer mon mot de passe">
+            <button type="submit" value="Changer mon mot de passe">Changer mon mot de passe</button>
         <br/>
         </form>
      </section>

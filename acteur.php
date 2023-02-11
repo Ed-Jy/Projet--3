@@ -91,7 +91,7 @@ $titrepage = "$acteur[acteur]";
 ?>
 
 <section class="sectionActeur">
-        <article class="bloc_Acteur">
+        <section>
             <div class=""><img class="logo_png" src="ressources/logo_Acteurs/<?php echo $acteur["logo"] ?>" alt=""/></div>
             <div class="acteurDesc">
                 <h3><?php echo $acteur["acteur"]?></h3>
@@ -116,18 +116,17 @@ $titrepage = "$acteur[acteur]";
                                 echo $NBVotes;
                                 echo '<input class="icon_like iconDislikeOff" type="submit" title="DISLIKE" value="-1" name="vote" />'; 
                                 break;
-                        }                 
-                ?>
+                        }?>
                 </form>
-        </article>
-        <article class="bloc_Commentaires">
+        </section>
+        <section class="bloc_Commentaires">
         <h3>Commentaires:</h3>
             <form class="form_coms" method="post">
                 <?php if(isset($c_msg)){ echo $c_msg; } ?>
                 <br>
                 <textarea name="post" id="" placeholder="Votre commentaire..." cols="40" rows="5"></textarea>
                 <br>
-                <input type="submit" value="Poster mon commentaire" name="submit_commentaire">
+                <input class="button_input" type="submit" value="Poster mon commentaire" name="submit_commentaire">
             </form>
             
             <?php while($c = $commentaires->fetch()){?>
@@ -139,9 +138,8 @@ $titrepage = "$acteur[acteur]";
                 <p class="p_commentaire_post" ><?= $c['post']?></p> 
                 </div>  
             <?php } ?>        
-        </article>
-        <a class="" href="profil.php"><button>Revenir aux Acteurs et Partenairs</button></a>
-        
+        </section>
+        <a href="profil.php"><button>Revenir aux Acteurs et Partenairs</button></a>       
 </section>
 
 

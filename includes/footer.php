@@ -1,6 +1,6 @@
 <footer>
         <div>
-        <p>© Copyright 2023 Bensaude Jérémy-Design</p>
+        <p class="footer_p">© Copyright 2023 Bensaude Jérémy-Design</p>
         </div>
     </footer>
     
