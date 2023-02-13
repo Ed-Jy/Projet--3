@@ -1,11 +1,11 @@
                         /* Mobil First */
-html{
+                        html{
     background-color: #dae4f5;
     display: flex;
     justify-content: center;
 }
                         /* Body */
-.container{
+body{
     width: auto;
     max-width: 360px;
     margin: auto;
@@ -46,8 +46,26 @@ button{
     width: 200px;
     height: 50px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 button:hover {
+    color: #5B85F1;
+    background-color: #fdfeff;
+    border: #5B85F1 solid 2px;
+  }
+.button_input{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;    
+    background-color: #5B85F1;
+    border: none;
+    color: #fdfeff;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.button_input:hover {
     color: #5B85F1;
     background-color: #fdfeff;
     border: #5B85F1 solid 2px;
@@ -98,7 +116,8 @@ li{
 }
 .logo_login{
     width: 20px;
-    padding-right: 5px;
+    position: relative;
+    right: 5px;
 }
 .login_section{
 text-align: center;
@@ -109,6 +128,7 @@ text-align: center;
     position: relative;
     width: 320px;
     border: none;
+    padding: 10px;
 
 }      
 section{
@@ -118,7 +138,6 @@ section{
     margin: 10px;
     background-color: #fdfeff;
     border-radius: 5px;
-    padding: 20px;
 }
 .sectionActeur{
     display: flex;
@@ -131,6 +150,8 @@ section{
     display: flex;
     align-items: unset;
     flex-direction: column;
+    margin: 10px;
+    padding: 10px;
 
 }
 .bloc_Commentaires{
@@ -157,7 +178,7 @@ section{
     background-color: #fdfeff;
     border: #5B85F1 solid 2px;
 }
-.acteurDesc >p{
+.acteurDesc{
     margin: unset;
 }
 textarea{
@@ -169,6 +190,9 @@ textarea{
 .logo_png{
     width: 300px;
 }   
+.logo_acteur_size{
+    width: 300px;
+}
 .like_dislike{
     position: relative;
     left: 100px;
@@ -258,83 +282,85 @@ footer{
                 
                             /* responsive mode*/
 @media screen and (min-width: 1000px){
-/* .container{
-    margin: auto;
-    width: 1000px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
+    body{
+        max-width: 1000px;
+    }
+    nav, section, footer, section{
+        width: 1000px;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        flex-direction: unset;
+        justify-content: space-between;
+        margin: 10px;
+        background-color: #fdfeff;
+        border-radius: 5px;
+    }
+    .bloc_partner{
+        width: 980px;
+        display: flex;
+        align-items: center;
+        flex-direction:unset;
+    }
+    .logo_png{
+        width: 400px;
+        margin: 10px;
+    }  
+    .readMore{
+        position: relative;
+        top: 60px;
+        width: 400px;
+    }
+    .img_illu{
+        position: relative;
+        width: 950px;
+        border: none;
+        padding: 10px;
+    } 
+    .logo_acteur_size{
+        width: 850px;
+    }
+    h3{
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        margin: 10px;
+    }
+    .like_dislike{
+        position: relative;
+        left: 400px;
+        width: 90px;
+        bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        border: none;
+        justify-content: space-around; 
+    }
+    .login_section{
+        position: relative;
+        top: 20px;
+    }
+    .readMore{
+        position: relative;
+        top: 40px;
+        width: 500px;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;    
+        background-color: #5B85F1;
+        border: none;
+        color: #fdfeff;
+        border-radius: 5px;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .readMore:hover {
+        color: #5B85F1;
+        background-color: #fdfeff;
+        border: #5B85F1 solid 2px;
+      }
 }
-.acteurDesc > p{
-    font-size: 17px;
-} */
-
-                            /* responsive Nav bar*/     
-/* nav{
-    display: flex;
-    justify-content:space-between;
-    flex-direction:unset;
-    font-family: 'Roboto Slab', serif;
-    width: 990px;
-    padding-right: 5px ;
-    padding-left: 5px;
-} 
-.logo_header{
-    width: 200px;
-    padding: 10px;
-    
-}
-.login_section{
-    position: relative;
-    top: 20px;
-}
-ul{
-    display: flex;
-    position: relative;
-    right: 5px;
-    top: -10px;
-    justify-content:unset;
-    flex-direction: column;
-
-}
-.userCompte{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-} */
-                            /* responsive section*/
-/* .bloc_partner{
-    display: flex;
-    flex-direction: unset;
-    justify-content: space-between;
-    margin: 5px;
-}
-
-.readMore{
-    position: relative;
-    top: 50px;
-    left: unset;
-    right: 2px;
-}
-.logo_png{
-    border: 2px solid rgb(0, 0, 0);
-    width: 400px;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-                            /* responsive form*/
-
-
-
-
-
-}
-
-
-

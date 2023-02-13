@@ -100,11 +100,11 @@ include_once("includes/sectionpresentation.php");
 
             <div>
                 <br>
-                <label for="question">Quel est votre film préféré ?</label>
+                <label>Quel est votre film préféré ?</label>
                 
                 <input type="text" name="reponse" id="reponse">
             </div>
-            </br>
+            <br>
             <?php if(isset($c_msg)){ echo $c_msg;} ?>
             <button type="submit">M'inscrire</button>
     </form>

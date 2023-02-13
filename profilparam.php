@@ -51,17 +51,7 @@ include_once("includes/sectionpresentation.php");
         </div>
     </form>
     <br>
-    <!-- <form class="profil_param" method="post">
-        <div>
-            <label for="pass">Mot de passe:</label>
-            <input type="password" name="oldpsd" placeholder="Mot de passe actuel" id="pass">
-            <input type="password" name="psd" placeholder="Nouveau mot de passe" id="pass">
-            <input type="password" name="confpsd" placeholder="Confirmation du mot de passe" id="pass">
-            <button type="submit" name="form2" value="modifier">Modifier</button>
-        </div>
-    </form> -->
-
-    <a class="" href="profil.php"><button>Revenir à la page principale</button></a>
+    <a href="profil.php">Revenir aux Acteurs et Partenairs</a>   
 </section>
 
 <!-- <p><?php echo "Nom de famille: ". $_SESSION["user"]["nom"] ?></p>

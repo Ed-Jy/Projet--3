@@ -59,10 +59,10 @@ if(!empty($_POST)){
                 <input type="text" name="nickname" id="pseudo">
             </div>         
             <div>
-                <label for="question">Quel est votre film préféré ?</label>
+                <label>Quel est votre film préféré ?</label>
                 <input type="text" name="reponse" id="reponse">
             </div>
-            </br>
+            <br>
             <?php if(isset($c_msg)){ echo $c_msg; } ?>
             <button type="submit">Changer le mot de passe</button>
     </form>

@@ -91,8 +91,9 @@ $titrepage = "$acteur[acteur]";
 ?>
 
 <section class="sectionActeur">
+    <h2>Partenaire</h2>
         <section>
-            <div class=""><img class="logo_png" src="ressources/logo_Acteurs/<?php echo $acteur["logo"] ?>" alt=""/></div>
+            <div><img class="logo_acteur_size" src="ressources/logo_Acteurs/<?php echo $acteur["logo"] ?>" alt="Logo du partenaire"/></div>
             <div class="acteurDesc">
                 <h3><?php echo $acteur["acteur"]?></h3>
                 <p><?php echo $acteur["description"]?></p>
@@ -124,7 +125,7 @@ $titrepage = "$acteur[acteur]";
             <form class="form_coms" method="post">
                 <?php if(isset($c_msg)){ echo $c_msg; } ?>
                 <br>
-                <textarea name="post" id="" placeholder="Votre commentaire..." cols="40" rows="5"></textarea>
+                <textarea name="post" placeholder="Votre commentaire..." cols="40" rows="5"></textarea>
                 <br>
                 <input class="button_input" type="submit" value="Poster mon commentaire" name="submit_commentaire">
             </form>
@@ -139,7 +140,7 @@ $titrepage = "$acteur[acteur]";
                 </div>  
             <?php } ?>        
         </section>
-        <a href="profil.php"><button>Revenir aux Acteurs et Partenairs</button></a>       
+        <a href="profil.php">Revenir aux Acteurs et Partenairs</a>       
 </section>
 
 

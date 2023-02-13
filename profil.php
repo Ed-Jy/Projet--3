@@ -36,13 +36,13 @@ if(!isset($_SESSION["user"])){
 </section>
         <?php foreach($acteurs as $acteur): ?> 
             <section class="bloc_partner">
-                <div><img class="logo_png" src="ressources/logo_Acteurs/<?php echo $acteur["logo"] ?>" alt=""/></div>
+                <div><img class="logo_png" src="ressources/logo_Acteurs/<?php echo $acteur["logo"] ?>" alt="Logo du partenaire"/></div>
                 <div class="acteurDesc">
                     <h3><?php echo $acteur["acteur"]?></h3>
                     <?php $acteurDesc = substr($acteur["description"],0 ,200); ?>
                     <p><?php echo "$acteurDesc...  "?></p>
                 </div>
-                    <a class="readMore" href="acteur.php?id_acteur=<?= $acteur["id_acteur"] ?>"><button>Lire la suite</button></a>
+               <a class="readMore" href="acteur.php?id_acteur=<?= $acteur["id_acteur"] ?>">Lire la suite...</a>
             </section>
             <?php endforeach; ?> 
 <?php //var_dump($acteurs)?>
