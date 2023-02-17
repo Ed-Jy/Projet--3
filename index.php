@@ -72,7 +72,7 @@ if(!empty($_POST)){
             </div>
             <br>
             <?php if(isset($c_msg)){ echo $c_msg;} ?>
-            <button type="submit">Me connecter</button>
+            <button type="submit">Me connecter à mon compte</button>
             <br>
             <a href="forgottenpassword.php">J'ai oublié mon mot de passe</a>
             <br>
